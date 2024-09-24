@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Quotes</title>
+    <!-- Load static files -->
+    {% load static %}
+
+    <!-- Link the CSS file -->
+    <link rel="stylesheet" type="text/css" href="{% static 'quotes/style.css' %}">     
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .quote-container {
+            margin-bottom: 30px;
+        }
+        img {
+            max-width: 300px;
+            height: auto;
+        }
+        .quote {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .author {
+            font-size: 18px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>All Quotes</h1>
+    
+    <!-- Loop over both the quotes and images -->
+    {% for quote, image in quotes|zip:images %}
+    <div class="quote-container">
+        <img src="{{ image }}" alt="Image of Roger Federer">
+        <p class="quote">"{{ quote }}"</p>
+        <p class="author">- Roger Federer</p>
+    </div>
+    {% endfor %}
+
+</body>
+</html>

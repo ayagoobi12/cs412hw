@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Load static files -->
+    {% load static %}
+
+    <!-- Link the CSS file -->
+    <link rel="stylesheet" type="text/css" href="{% static 'quotes/style.css' %}">      
+    <title>About Roger Federer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .creator {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>About {{ person_name }}</h1>
+    <p>{{ biography }}</p>
+
+    <div class="creator">
+        <h2>About the App Creator</h2>
+        <p>{{ app_creator }}: {{ creator_info }}</p>
+    </div>
+</div>
+
+</body>
+</html>
