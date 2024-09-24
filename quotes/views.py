@@ -5,12 +5,22 @@ import random
 QUOTES = [
     "I've practiced so much that it's just ingrained in me. But it's important to have fun, too. Sometimes I even smile on the court.",
     "Tennis can be a very frustrating sport, but you have to stay calm and composed if you want to succeed.",
-    "I fear no one, but respect everyone."
+    "I fear no one, but respect everyone.",
+    "I always believe if you're stuck in a hole and maybe things aren't going well you will come out stronger. Everything in life is this way.",
+    "You have to put in the hours because there’s always something which you can improve.",
+    "Sometimes you have to accept that a guy played better on the day than you.",
+    "I’m a very positive thinker, and I think that is what helps me the most in difficult moments.",
+    "The serve, I think, is the most important shot in the game. It’s the only shot you have full control over."
 ]
 IMAGES = [
     "https://cdn.britannica.com/22/188722-050-BB193EA3/Roger-Federer-US-Open-2007.jpg",
     "https://media.gq.com/photos/596c23a0ae316b7975876777/16:9/w_2560%2Cc_limit/gq-federer.jpg",
-     "https://cdn.britannica.com/23/188723-050-332EE886/Roger-Federer-US-Open-2014.jpg"
+    "https://cdn.britannica.com/23/188723-050-332EE886/Roger-Federer-US-Open-2014.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/a/a5/Roger_Federer_Wimbledon_2012.jpg",
+    "https://static01.nyt.com/images/2018/06/24/sports/24federer1/merlin_139929545_63473b87-3626-453b-8229-32d2035f0a29-superJumbo.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/3/3b/Roger_Federer_2011.jpg",
+    "https://media.vanityfair.com/photos/5d3052837c978b00088372d8/master/w_2560%2Cc_limit/roger-federer-2019-embed.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/5/50/Roger_Federer_Madrid_Open_2019.jpg"
 ]
 
 def quote(request):
