@@ -16,11 +16,12 @@ IMAGES = [
     "https://cdn.britannica.com/22/188722-050-BB193EA3/Roger-Federer-US-Open-2007.jpg",
     "https://media.gq.com/photos/596c23a0ae316b7975876777/16:9/w_2560%2Cc_limit/gq-federer.jpg",
     "https://cdn.britannica.com/23/188723-050-332EE886/Roger-Federer-US-Open-2014.jpg",
-    "https://upload.wikimedia.org/wikipedia/commons/a/a5/Roger_Federer_Wimbledon_2012.jpg",
-    "https://static01.nyt.com/images/2018/06/24/sports/24federer1/merlin_139929545_63473b87-3626-453b-8229-32d2035f0a29-superJumbo.jpg",
-    "https://upload.wikimedia.org/wikipedia/commons/3/3b/Roger_Federer_2011.jpg",
-    "https://media.vanityfair.com/photos/5d3052837c978b00088372d8/master/w_2560%2Cc_limit/roger-federer-2019-embed.jpg",
-    "https://upload.wikimedia.org/wikipedia/commons/5/50/Roger_Federer_Madrid_Open_2019.jpg"
+    "https://i.cbc.ca/1.6583766.1692147119!/fileImage/httpImage/federer-roger-091522.jpg",
+    "https://assets.vogue.com/photos/66a6fe133fae08117a60129f/master/w_2560%2Cc_limit/GettyImages-161555765_SCALED_LUC.jpg",
+    "https://media.npr.org/assets/img/2022/09/15/gettyimages-1233248343_custom-c80c2a9cc7a4ae6e3de994ee9d146a8be2e61afe.jpg?s=1100&c=50&f=jpeg"
+    "https://images.tennis.com/image/private/t_q-best/tenniscom-prd/trnjjhiqerwljw95vbmw.jpg"
+
+   
 ]
 
 def quote(request):
