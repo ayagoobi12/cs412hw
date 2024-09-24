@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote</title>
+    <!-- Load static files -->
+    {% load static %}
+
+    <!-- Link the CSS file -->
+    <link rel="stylesheet" type="text/css" href="{% static 'quotes/style.css' %}">     
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        img {
+            max-width: 300px;
+            height: auto;
+        }
+        .quote-container {
+            margin-top: 20px;
+        }
+        .quote {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .author {
+            font-size: 20px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Quote of the Day</h1>
+    
+    <!-- Display the image -->
+    <img src="{{ image }}" alt="Image of the person quoted">
+
+    <div class="quote-container">
+        <!-- Display the quote -->
+        <p class="quote">"{{ quote }}"</p>
+        <p class="author">- Roger Federer</p>
+    </div>
+
+</body>
+</html>

@@ -39,7 +39,7 @@ def quote(request):
     #this function is provided by Django and is used to combine the template (in this case 'quote.html') and return an HTTP response. 
     return render(request, 'quote.html', context)
 
-def home(request):
+def base(request):
     """"Main page view which selects a random quote and and image to display"""
     selected_quote = random.choice(QUOTES)
     selected_image = random.choice(IMAGES)
@@ -52,7 +52,7 @@ def home(request):
         'image': selected_image
     }
     #this function is provided by Django and is used to combine the template (in this case 'quote.html') and return an HTTP response. 
-    return render(request, 'quotes/quote.html', context)
+    return render(request, 'quotes/base.html', context)
 
 def show_all(request):
     """View to display all quotes and images"""
