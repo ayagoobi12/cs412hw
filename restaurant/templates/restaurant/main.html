@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ name }} - Main Page</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'restaurant/main.css' %}">
+</head>
+<body>
+    <div class="container">
+        <!-- Restaurant Name -->
+        <h1 class="restaurant-name">{{ name }}</h1>
+
+        
+        <a href="{% url 'order' %}" style="display: block; text-align: center; font-size: 18px; color: #6a0dad; text-decoration: underline; margin-bottom: 20px;">
+            Online Order Here
+        </a>
+
+        <!-- Location -->
+        <p class="restaurant-location"><strong>Location:</strong> {{ location }}</p>
+
+        <!-- Photo -->
+        <div class="restaurant-photo">
+            <img src="{{ photo }}" alt="{{ name }}" class="photo">
+        </div>
+
+        <!-- Hours of Operation -->
+        <h2 style="text-align: center;">Hours of Operation</h2>
+        <table class="hours-table">
+            <thead>
+                <tr>
+                    <th>Day</th>
+                    <th>Opening Time</th>
+                    <th>Closing Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for hour in hours %}
+                <tr>
+                    <td>{{ hour.day }}</td>
+                    <td>{{ hour.open }}</td>
+                    <td>{{ hour.close }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

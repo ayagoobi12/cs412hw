@@ -1,0 +1,94 @@
+/* General Styles */
+body {
+    font-family: 'Montserrat', sans-serif;  /* Change to a more lively font */
+    margin: 0;
+    padding: 0;
+    background-color: #fffbe7;  /* Light beige background, reminiscent of a warm, cozy environment */
+    color: #333;  /* Dark color for easy readability */
+}
+
+/* Container for content */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);  /* Deeper shadow for depth */
+}
+
+/* Restaurant Name */
+.restaurant-name {
+    font-size: 48px;
+    text-align: center;
+    color: #e74c3c;  /* Bold red color */
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);  /* Adds a slight text shadow */
+}
+
+/* Location */
+.restaurant-location {
+    font-size: 20px;
+    text-align: center;
+    color: #2c3e50;  /* Darker text for clarity */
+    margin-bottom: 40px;
+    font-weight: 500;
+}
+
+/* Restaurant Photo */
+.restaurant-photo {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.restaurant-photo img.photo {
+    max-width: 80%;
+    height: 500px;
+    border-radius: 15px;
+    border: 5px solid #e67e22;  /* Orange border matching the restaurant theme */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);  /* Adds a soft shadow */
+}
+
+/* Hours of Operation Table */
+.hours-table {
+    text-align: center;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.hours-table th {
+    padding: 15px;
+    background-color: #e74c3c;  /* Red header for vibrancy */
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+}
+
+.hours-table td {
+    padding: 12px;
+    border: 1px solid #ecf0f1;
+    color: #34495e;
+    font-size: 18px;
+}
+
+.hours-table tr:nth-child(even) {
+    background-color: #f9e79f;  /* Light yellow for even rows */
+}
+
+.hours-table tr:hover {
+    background-color: #fad7a0;  /* Slightly darker yellow on hover */
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    margin-top: 50px;
+    color: #95a5a6;
+    font-size: 14px;
+}

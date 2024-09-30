@@ -1,0 +1,87 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fef4e8;  /* Warm beige background */
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Container */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    border: 2px solid #e74c3c;  /* Red border for a bold, kebab-shop look */
+}
+
+/* Header Styles */
+h1 {
+    color: #e74c3c;  /* Bold red for headings */
+    font-size: 32px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+h2, h3 {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Unordered List Styling */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background-color: #ffe5d1;  /* Soft orange background */
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Special Instructions and Ready Time */
+p, .ready-time {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.ready-time {
+    color: #2c3e50;
+    font-weight: bold;
+    background-color: #f7d7c4;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #e74c3c;  /* Red border for emphasis */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2, h3 {
+        font-size: 16px;
+    }
+
+    ul li {
+        font-size: 14px;
+    }
+
+    .ready-time {
+        font-size: 14px;
+    }
+}

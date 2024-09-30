@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Form</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'restaurant/order.css' %}">
+</head>
+<body>
+    <h1>Place Your Order</h1>
+
+    <a href="{% url 'main' %}" style="display: block; text-align: center; font-size: 18px; color: #6a0dad; text-decoration: underline; margin-bottom: 20px;">
+        Home 
+    </a>
+    
+    <form action="" method="post">
+        {% csrf_token %}
+        
+        <!-- Display 4 Menu Items with Checkboxes -->
+        <fieldset>
+            <legend>Menu Items</legend>
+
+            {% for item in menu %}
+            {% if forloop.counter <= 4 %}  <!-- Only display first 4 items -->
+                <div>
+                    <input type="checkbox" id="{{ item.item }}" name="menu_items" value="{{ item.item }}">
+                    <label for="{{ item.item }}">{{ item.item }} - {{ item.price }}</label>
+                </div>
+            {% endif %}
+            {% endfor %}
+        </fieldset>
+
+        <!-- Item with Extra Options (e.g., Toppings) -->
+        <fieldset>
+            <legend>Extras for Chicken Kebab Plate</legend>
+            <div>
+                <input type="checkbox" id="extra_sauce" name="extras" value="extra_sauce">
+                <label for="extra_sauce">Extra Sauce</label>
+            </div>
+            <div>
+                <input type="checkbox" id="extra_pita" name="extras" value="extra_pita">
+                <label for="extra_pita">Extra Pita</label>
+            </div>
+            <div>
+                <input type="checkbox" id="extra_salad" name="extras" value="extra_salad">
+                <label for="extra_salad">Extra Salad</label>
+            </div>
+        </fieldset>
+
+        <!-- Daily Special (Dynamically Generated) -->
+        <fieldset>
+            <legend>Daily Special</legend>
+            <div>
+                <input type="checkbox" id="daily_special" name="daily_special" value="{{ daily_special.item }}">
+                <label for="daily_special">{{ daily_special.item }} - {{ daily_special.price }}</label>
+            </div>
+        </fieldset>
+
+        <!-- Special Instructions -->
+        <fieldset>
+            <legend>Special Instructions</legend>
+            <textarea name="special_instructions" rows="4" cols="50" placeholder="Any special requests..."></textarea>
+        </fieldset>
+
+        <!-- Customer Information Fields -->
+        <fieldset>
+            <legend>Customer Information</legend>
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div>
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+        </fieldset>
+
+        <!-- Submit Button -->
+        <button type="submit">Place Order</button>
+    </form>
+</body>
+</html>

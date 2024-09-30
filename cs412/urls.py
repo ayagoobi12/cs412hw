@@ -19,5 +19,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('quotes.urls')),  # Include quotes app URLs
+    path('quotes/', include('quotes.urls')),  # Include quotes app URLs
+    path('formdata/', include('formdata.urls')), # add formdata URL pathways 
+    path('restaurant/', include('restaurant.urls')), #
 ]

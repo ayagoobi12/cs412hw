@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'formdata/styles.css' %}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Contact Form</h1>
+    <form action="">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="color">Favorite Color:</label>
+        <input type="text" id="color" name="color" required>
+
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+</body>
+</html>
