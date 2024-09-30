@@ -26,7 +26,7 @@ def base(request):
         'photo': photo,
     }
 
-    return render(request, 'restaurant/base.html', context)
+    return render(request, 'restaurant/main.html', context)
 
 
 def order(request):
