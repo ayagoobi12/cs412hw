@@ -4,7 +4,7 @@ import time
 from datetime import datetime, timedelta
 
 # Create your views here.
-def main(request):
+def base(request):
     """Main page view for the basic information about the restauraunt"""
     name = "Paristanbul"
     location = "116 Rue du Faubourg Saint-Martin, 75010 Paris, France"
@@ -26,7 +26,7 @@ def main(request):
         'photo': photo,
     }
 
-    return render(request, 'restaurant/main.html', context)
+    return render(request, 'restaurant/base.html', context)
 
 
 def order(request):
