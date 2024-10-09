@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Facebook-like App{% endblock %}</title>
+    
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'minifb/base.css' %}">
+    
+    
+    <!-- Optional: Bootstrap for responsive layout (like Facebook) -->
+   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header with Facebook-like navbar -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <a class="navbar-brand" href="#">MyApp</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/profile/">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/messages/">Messages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/notifications/">Notifications</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main content area -->
+    <main class="container mt-4">
+        {% block content %}
+        <!-- This is where individual pages will insert their content -->
+        {% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer bg-light text-center text-lg-start mt-auto py-3">
+        <div class="text-center p-3">
+            © 2024 Facebook CS412
+        </div>
+    </footer>
+
+    <!-- Optional: Bootstrap JS and dependencies (if you use Bootstrap) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

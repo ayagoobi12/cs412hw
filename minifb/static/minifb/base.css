@@ -1,0 +1,168 @@
+/* General Body Styling */
+body {
+    background-color: #f0f2f5; /* Facebook-like background color */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #1c1e21;
+}
+
+/* Facebook-like Navbar Styling */
+.navbar {
+    background-color: #4267B2;  /* Facebook blue color */
+}
+
+.navbar-brand, .nav-link {
+    color: white;
+}
+
+.nav-link:hover {
+    color: #ddd;
+}
+
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.navbar-collapse {
+    flex-grow: 1;
+}
+
+.nav-item {
+    margin-left: 20px;
+}
+
+/* Container and Layout */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer Styling */
+.footer {
+    background-color: #f8f9fa;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 14px;
+    color: #65676b;
+    border-top: 1px solid #e9ecef;
+}
+
+/* Form Styling */
+form {
+    margin: 20px 0;
+}
+
+/* Make form inputs more specific to avoid Bootstrap overriding */
+form input[type="text"], form input[type="email"], form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Make form button more specific to avoid Bootstrap overriding */
+form input[type="submit"] {
+    width: 100%;
+    background-color: #4267B2;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: #365899;
+}
+
+/* Profile Table Styling */
+.profile-table-container {
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
+}
+
+/* Updated Facebook-like table styling */
+.profile-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Header styling for a clean look */
+.profile-table th {
+    background-color: #4267B2; /* Facebook Blue */
+    color: white;
+    padding: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: left;
+    border-bottom: 2px solid #365899;
+}
+
+/* Table row styling */
+.profile-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+    background-color: #fff;
+}
+
+/* Highlight effect on row hover */
+.profile-table tr:hover {
+    background-color: #E8F0FE; /* Facebook-like light blue hover effect */
+}
+
+/* Profile Image Styling */
+.profile-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Round profile image */
+    object-fit: cover;
+}
+
+/* No Image Text */
+.profile-table td:empty::after {
+    content: 'No Image';
+    color: #999999;
+    font-size: 14px;
+}
+
+/* Zebra striping for alternate rows */
+.profile-table tr:nth-child(even) {
+    background-color: #f7f7f7; /* Light gray alternate rows */
+}
+
+/* Ensure text color is readable on hover */
+.profile-table tr:hover td {
+    color: #1c1e21; /* Dark text during hover */
+}
+
+/* Style for the Page Header to match the table header */
+.page-header {
+    background-color: #4267B2; /* Facebook Blue */
+    color: white;
+    padding: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
