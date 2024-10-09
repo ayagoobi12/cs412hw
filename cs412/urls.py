@@ -22,5 +22,5 @@ urlpatterns = [
     path('quotes/', include('quotes.urls')),  # Include quotes app URLs
     path('formdata/', include('formdata.urls')), # add formdata URL pathways 
     path('restaurant/', include('restaurant.urls')), #
-    path('mini_fb/', include('minifb.urls')),
+    path('mini_fb/', include('mini_fb.urls')),
 ]
