@@ -1,0 +1,101 @@
+{% extends 'mini_fb/base.html' %}
+
+{% block title %}Profile Details{% endblock %}
+
+{% block content %}
+<!-- Page header with matching Facebook-like color -->
+<h1 class="page-header">Profile Details</h1>
+
+<!-- Container for the profile details -->
+<div class="profile-details-container">
+    <div class="profile-card">
+        <!-- Profile Image -->
+        <div class="profile-image">
+            {% if profile.profile_image_url %}
+                <img src="{{ profile.profile_image_url }}" alt="{{ profile.first_name }}'s Profile Image" class="profile-img">
+            {% else %}
+                <p>No Profile Image Available</p>
+            {% endif %}
+        </div>
+
+        <!-- Profile Information -->
+        <div class="profile-info">
+            <h2>{{ profile.first_name }} {{ profile.last_name }}</h2>
+            <p><strong>City:</strong> {{ profile.city }}</p>
+        </div>
+    </div>
+</div>
+
+<!-- Link to create a new status message -->
+<div class="create-status-link">
+    <a href="{% url 'create_status' profile.pk %}" class="btn btn-primary">Create Status Message</a>
+</div>
+
+<!-- Display Status Messages -->
+<div class="status-messages-container">
+    <h3>Status Messages</h3>
+    {% if profile.get_status_messages %}
+        <ul class="status-message-list">
+            {% for status in profile.get_status_messages %}
+                <li class="status-message">
+                    <p><strong>{{ status.timestamp }}:</strong> {{ status.message }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No status messages available.</p>
+    {% endif %}
+</div>
+
+<!-- Optional styling for the card layout -->
+<style>
+    .profile-details-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    .profile-card {
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 20px;
+        max-width: 500px;
+        width: 100%;
+        background-color: #f9f9f9;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    .profile-image {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .profile-img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    .profile-info {
+        text-align: center;
+    }
+    .profile-info h2 {
+        margin-bottom: 10px;
+    }
+    .create-status-link {
+        text-align: center;
+        margin-top: 20px;
+    }
+    .status-messages-container {
+        margin-top: 20px;
+    }
+    .status-message-list {
+        list-style-type: none;
+        padding: 0;
+    }
+    .status-message {
+        border: 1px solid #e0e0e0;
+        border-radius: 4px;
+        padding: 10px;
+        margin-bottom: 10px;
+        background-color: #f1f1f1;
+    }
+</style>
+{% endblock %}

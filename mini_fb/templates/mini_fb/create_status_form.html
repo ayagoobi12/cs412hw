@@ -1,0 +1,54 @@
+{% extends 'mini_fb/base.html' %}
+
+{% block title %}Create Status Message{% endblock %}
+
+{% block content %}
+<h1 class="page-header">Create a Status Message</h1>
+
+<div class="status-message-form-container">
+    <form method="POST" action="{% url 'create_status' profile.pk %}">
+        {% csrf_token %}
+        
+        <div class="form-group">
+            <label for="{{ form.message.id_for_label }}">Status Message:</label>
+            {{ form.message }}  <!-- Render the form field directly -->
+            {% if form.message.errors %}
+                <div class="error-message">
+                    {{ form.message.errors }}
+                </div>
+            {% endif %}
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+<style>
+    .status-message-form-container {
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    .page-header {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    .error-message {
+        color: red;
+        margin-top: 5px;
+    }
+</style>
+{% endblock %}
