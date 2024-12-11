@@ -1,0 +1,12 @@
+{% extends 'final_project/base.html' %}
+{% block content %}
+<h2>Airlines</h2>
+<a href="{% url 'final_project:airline_create' %}">Create New Airline</a>
+<ul>
+    {% for airline in airlines %}
+    <li>
+        <a href="{% url 'final_project:airline_detail' airline.pk %}">{{ airline }}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

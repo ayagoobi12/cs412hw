@@ -1,0 +1,7 @@
+{% extends 'final_project/base.html' %}
+{% block content %}
+<h2>{{ airline.name }} ({{ airline.code }})</h2>
+<p><strong>Code:</strong> {{ airline.code }}</p>
+<p><a href="{% url 'final_project:airline_update' airline.pk %}">Edit</a> | 
+<a href="{% url 'final_project:airline_delete' airline.pk %}">Delete</a></p>
+{% endblock %}

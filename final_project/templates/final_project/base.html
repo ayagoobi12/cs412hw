@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>BlueSky Airways</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap">
+</head>
+<body class="page-container">
+    <header class="navbar">
+        <div class="navbar-brand">
+            <!-- Ensure logo.png exists in static/img/ -->
+            <img src="{% static 'img/logo.png' %}" alt="BlueSky Logo" class="logo">
+            <span class="brand-name">BlueSky Airways</span>
+        </div>
+        <nav class="navbar-links">
+            <a href="{% url 'final_project:airline_list' %}">Airlines</a>
+            <a href="{% url 'final_project:flight_list' %}">Flights</a>
+            <a href="{% url 'final_project:passenger_list' %}">Passengers</a>
+            <a href="{% url 'final_project:flight_search' %}">Search Flights</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section without Image Tag -->
+<section class="hero">
+    <div class="hero-overlay"></div> <!-- Overlay for better text readability -->
+    <div class="hero-content">
+        <h1>Explore the Skies with BlueSky</h1>
+        <p>Journey to your dream destinations with ease and comfort.</p>
+        <a href="{% url 'final_project:flight_search' %}" class="btn-primary">Find Flights</a>
+    </div>
+</section>
+
+    <main class="main-content">
+        {% if messages %}
+        <ul class="messages">
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer">
+        &copy; {{ current_year|default:2024 }} BlueSky Airways. All rights reserved.
+    </footer>
+</body>
+</html>

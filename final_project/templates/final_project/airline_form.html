@@ -1,0 +1,9 @@
+{% extends 'final_project/base.html' %}
+{% block content %}
+<h2>{{ object.pk|yesno:"Update Airline,Create Airline" }}</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
+{% endblock %}

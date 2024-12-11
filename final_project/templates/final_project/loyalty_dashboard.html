@@ -1,0 +1,27 @@
+<!-- templates/loyalty_dashboard.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Loyalty Dashboard</h2>
+  
+  <!-- Display Membership Level and Points -->
+  <p><strong>Membership Level:</strong> {{ loyalty_member.get_membership_level_display }}</p>
+  <p><strong>Points:</strong> {{ loyalty_member.points }}</p>
+
+  <!-- Available Rewards Section -->
+  <h3>Available Rewards</h3>
+  <ul>
+    {% for reward in rewards %}
+      <li>
+        <strong>{{ reward.name }}</strong> - {{ reward.description }} ({{ reward.points_required }} points)
+        {% if loyalty_member.points >= reward.points_required %}
+          <!-- Redeem Button for Eligible Rewards -->
+          <a href="{% url 'redeem_reward' reward.id %}" class="btn-secondary">Redeem</a>
+        {% else %}
+          <span>Not enough points</span>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

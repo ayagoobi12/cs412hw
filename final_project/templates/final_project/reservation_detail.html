@@ -1,0 +1,16 @@
+<!-- templates/reservation_detail.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Reservation Details</h2>
+  <p><strong>Reservation ID:</strong> {{ reservation.id }}</p>
+  <p><strong>Flight:</strong> {{ reservation.flight }}</p>
+  <p><strong>Seat:</strong> {{ reservation.seat }}</p>
+  <p><strong>Status:</strong> {{ reservation.get_status_display }}</p>
+  <p><strong>Reservation Date:</strong> {{ reservation.reservation_date }}</p>
+
+  {% if reservation.status == 'CONFIRMED' %}
+    <a href="{% url 'cancel_reservation' reservation.id %}" class="btn-secondary">Cancel Reservation</a>
+  {% endif %}
+{% endblock %}

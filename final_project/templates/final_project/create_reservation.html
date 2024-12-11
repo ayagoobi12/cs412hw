@@ -1,0 +1,12 @@
+<!-- templates/create_reservation.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Create Reservation</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }} <!-- Renders form fields with paragraph tags -->
+    <button type="submit" class="btn-primary">Reserve</button>
+  </form>
+{% endblock %}

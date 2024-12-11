@@ -1,0 +1,46 @@
+<!-- templates/flight_detail.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Flight Details: {{ flight.flight_number }}</h2>
+  
+  <!-- Flight Information -->
+  <p><strong>Origin:</strong> {{ flight.origin.name }} ({{ flight.origin.code }})</p>
+  <p><strong>Destination:</strong> {{ flight.destination.name }} ({{ flight.destination.code }})</p>
+  <p><strong>Departure Time:</strong> {{ flight.departure_time }}</p>
+  <p><strong>Arrival Time:</strong> {{ flight.arrival_time }}</p>
+  <p><strong>Capacity:</strong> {{ flight.capacity }}</p>
+  <p><strong>Price:</strong> ${{ flight.price }}</p>
+  <p><strong>Current Status:</strong> {{ flight.flightstatus.get_status_display }}</p>
+  <p><strong>Seats Available:</strong> {{ flight.seats_available }}</p>
+
+  <!-- Update Status Button for Staff Members -->
+  {% if user.is_staff %}
+    <a href="{% url 'update_flight_status' flight.id %}" class="btn-secondary">Update Flight Status</a>
+  {% endif %}
+
+  <!-- Schedule Changes Section -->
+  <h3>Schedule Changes</h3>
+  {% if schedule_changes %}
+    <ul>
+      {% for change in schedule_changes %}
+        <li><strong>{{ change.change_type }}</strong>: {{ change.description }} on {{ change.changed_at }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No schedule changes.</p>
+  {% endif %}
+
+  <!-- Confirmed Reservations Section -->
+  <h3>Confirmed Reservations</h3>
+  {% if reservations %}
+    <ul>
+      {% for reservation in reservations %}
+        <li>{{ reservation.passenger }} - Seat {{ reservation.seat }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No confirmed reservations.</p>
+  {% endif %}
+{% endblock %}

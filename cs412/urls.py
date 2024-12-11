@@ -23,4 +23,5 @@ urlpatterns = [
     path('formdata/', include('formdata.urls')), # add formdata URL pathways 
     path('restaurant/', include('restaurant.urls')), #
     path('mini_fb/', include('mini_fb.urls')),
+    path('final_project/', include('final_project.urls', namespace='final_project')),
 ]

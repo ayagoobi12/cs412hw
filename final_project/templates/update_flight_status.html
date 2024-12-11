@@ -1,0 +1,26 @@
+<!-- templates/update_flight_status.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Update Flight Status: {{ flight.flight_number }}</h2>
+  <form method="post">
+    {% csrf_token %}
+    <!-- Dropdown for selecting new status -->
+    <label for="status">New Status:</label>
+    <select name="status" id="status" required>
+      {% for key, value in status_choices %}
+        <option value="{{ key }}">{{ value }}</option>
+      {% endfor %}
+    </select>
+    <br><br>
+    
+    <!-- Textarea for description of the change -->
+    <label for="description">Description:</label>
+    <textarea name="description" id="description" rows="4" required></textarea>
+    <br><br>
+    
+    <!-- Submit button -->
+    <button type="submit" class="btn-primary">Update Status</button>
+  </form>
+{% endblock %}

@@ -1,0 +1,17 @@
+<!-- templates/redeem_reward.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Redeem Reward: {{ reward.name }}</h2>
+  
+  <!-- Reward Description and Points Required -->
+  <p>{{ reward.description }}</p>
+  <p><strong>Points Required:</strong> {{ reward.points_required }}</p>
+
+  <!-- Confirmation Form -->
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn-primary">Confirm Redemption</button>
+  </form>
+{% endblock %}

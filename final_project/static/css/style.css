@@ -1,0 +1,316 @@
+/* General Reset & Font */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', Arial, sans-serif;
+    background: #f5f5f5;
+    color: #333;
+}
+
+/* Make the body fill the viewport and enable flex layout */
+html, body {
+    height: 100%;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #003366;
+    padding: 0.5rem 1rem;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand .logo {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.navbar-brand .brand-name {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.5px;
+}
+
+.navbar-links a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 1rem;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.navbar-links a:hover {
+    color: #cce0ff;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 70vh; /* Adjust as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: url('../img/heros.jpg') center center / cover no-repeat; /* Background image */
+    background-color: #f0f8ff; /* Fallback color */
+}
+
+/* Pseudo-element for Plane Image */
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: 10%; /* Position the plane at the bottom */
+    right: 10%; /* Position the plane towards the right */
+    width: 300px; /* Adjust the size as needed */
+    height: auto;
+    background: url('../img/plane.png') no-repeat center center;
+    background-size: contain;
+    z-index: 1; /* Below overlay and content */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Optional Hover Effect for Plane Image */
+.hero:hover::after {
+    transform: translateY(-10px); /* Slight upward movement on hover */
+}
+
+/* Overlay for Better Text Readability */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Semi-transparent black overlay */
+    z-index: 2; /* Below content */
+}
+
+/* Hero Content Styling */
+.hero-content {
+    position: relative;
+    z-index: 3; /* Above image and overlay */
+    color: #fff;
+    text-align: center;
+    max-width: 600px;
+    padding: 1rem 2rem;
+    background: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
+    border-radius: 0.5rem;
+}
+
+/* Hero Headline */
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+/* Hero Subheadline */
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+/* Primary Button Styling */
+.btn-primary {
+    display: inline-block;
+    background: #0069d9;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.25rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.btn-primary:hover {
+    background: #0053a5;
+    transform: scale(1.05);
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.main-content h2 {
+    font-size: 1.75rem;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.messages {
+    list-style-type: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.messages li {
+    background: #e0f7e0;
+    border: 1px solid #b0dcb0;
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.25rem;
+}
+
+/* Footer */
+.footer {
+    background: #003366;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+    margin-top: auto;
+}
+
+/* Results Styling */
+.results {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 1rem;
+    margin-top: 2rem;
+}
+
+.result-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+    padding: 1rem;
+    transition: box-shadow 0.3s, transform 0.3s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.result-item:hover {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transform: translateY(-2px);
+}
+
+.result-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.result-item p {
+    margin: 0.5rem 0;
+    line-height: 1.4;
+}
+
+.result-item a {
+    text-decoration: none;
+    color: #0069d9;
+    font-weight: 600;
+}
+
+.result-item a:hover {
+    text-decoration: underline;
+}
+
+/* Form Container */
+.form-container {
+    background: #fff;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+    margin-bottom: 2rem;
+}
+
+.form-container input,
+.form-container select,
+.form-container textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+}
+
+/* Secondary Button */
+.btn-secondary {
+    background: #6c757d;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.btn-secondary:hover {
+    background: #5a6268;
+    transform: scale(1.05);
+}
+
+/* Responsive Design for Hero Section */
+@media (max-width: 768px) {
+    .hero {
+        height: 60vh;
+    }
+
+    .hero::after {
+        width: 200px;
+        bottom: 5%;
+        right: 5%;
+    }
+
+    .hero-content {
+        max-width: 90%;
+        padding: 1rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .btn-primary {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: 50vh;
+    }
+
+    .hero::after {
+        width: 150px;
+        bottom: 2%;
+        right: 2%;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 0.9rem;
+    }
+
+    .btn-primary {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+}

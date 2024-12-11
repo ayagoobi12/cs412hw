@@ -1,0 +1,11 @@
+{% extends 'final_project/base.html' %}
+{% block content %}
+<h2>Passengers</h2>
+<ul>
+    {% for passenger in passengers %}
+    <li>{{ passenger }}</li>
+    {% empty %}
+    <li>No passengers found</li>
+    {% endfor %}
+</ul>
+{% endblock %}
